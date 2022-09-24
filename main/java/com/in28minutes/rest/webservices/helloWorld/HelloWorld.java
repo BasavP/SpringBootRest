@@ -16,10 +16,19 @@ public class HelloWorld {
 	 * LoggerFactory.getLogger(HelloWorld.class.getSimpleName());
 	 */
 	 
-	@GetMapping(path ="/hello-world")
+	@GetMapping("/hello-world")
 	public String helloWorld() {
 		/* log.info("Called helloWorld()"); */
 		return "hello world";
+		
+	}	
+	
+	
+	//Step 03 - Enhancing the Hello World REST API to return a Bean
+	@GetMapping("/hello-world-bean")
+	public HelloWorldBean helloWorldBean() {
+		/* log.info("Called helloWorld()"); */
+		return new HelloWorldBean("Hello world Beans");
 		
 	}	
 }
