@@ -1,6 +1,5 @@
 package com.in28minutes.rest.webservices.User;
 
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -8,13 +7,16 @@ import java.time.LocalDateTime;
 
 
 
-@NoArgsConstructor
+
 public class User {
 
     private Integer id;
     private String name;
     private LocalDateTime birthDate;
 
+    
+    public User() {}
+    
     public User(Integer id, String name, LocalDateTime birthDate) {
         this.id = id;
         this.name = name;
