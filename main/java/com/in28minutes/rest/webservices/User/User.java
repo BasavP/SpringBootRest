@@ -7,8 +7,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 public class User {
 
@@ -19,6 +18,30 @@ public class User {
     public User(Integer id, String name, LocalDateTime birthDate) {
         this.id = id;
         this.name = name;
+        this.birthDate = birthDate;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDateTime getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
     }
 
