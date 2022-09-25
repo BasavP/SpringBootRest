@@ -2,8 +2,11 @@ package com.in28minutes.rest.webservices.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -27,9 +30,16 @@ public class UserResource {
     }
 
     @PostMapping(path="/users")
-    public void saveUser(@RequestBody User user)
+    public ResponseEntity<Object> saveUser(@RequestBody User user)
     {
-        service.save(user);
+        User savedUser = service.save(user);
+        //to return the URI after the user is saved
+         URI location  = ServletUriComponentsBuilder.fromCurrentRequest()
+                 .path("/{id}")
+                 .buildAndExpand(savedUser.getId())
+                 .toUri();
+
+        return ResponseEntity.created(location).build(); // returns 201
     }
 
 }
