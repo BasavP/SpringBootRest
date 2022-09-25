@@ -2,10 +2,7 @@ package com.in28minutes.rest.webservices.helloWorld;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 //Step 02 - Creating a Hello World REST API with Spring Boot
@@ -29,6 +26,13 @@ public class HelloWorld {
 	public HelloWorldBean helloWorldBean() {
 		/* log.info("Called helloWorld()"); */
 		return new HelloWorldBean("Hello world Beans");
-		
-	}	
+	}
+
+
+	//Introduced PathVariable
+	@GetMapping("/hello-world-bean/path-variable/{name}")
+	public HelloWorldBean helloWorldPathVariable(@PathVariable("name") String names) {
+		/* log.info("Called helloWorld()"); */
+		return new HelloWorldBean("Hello world "+ names);
+	}
 }
