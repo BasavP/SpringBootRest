@@ -14,7 +14,7 @@ public class UserResource {
 
     private UserDaoClass service;
 
-    @Autowired
+    
     public UserResource(UserDaoClass service) {
         this.service = service;
     }
@@ -40,6 +40,15 @@ public class UserResource {
                  .toUri();
 
         return ResponseEntity.created(location).build(); // returns 201
+    }
+    
+    
+    @DeleteMapping(path="/users/{id}")
+    public void deleteById(@PathVariable("id") int id)
+    {
+    	service.deleteById(id);
+    	
+    	
     }
 
 }
