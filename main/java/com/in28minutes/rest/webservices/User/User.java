@@ -5,13 +5,21 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 
 
 
 public class User {
 
     private Integer id;
+    
+    @Size(min = 2, message = "name must be atleast 2 chars")
     private String name;
+    
+    @Past  (message = "birthDate should be in the past" )  //to ensure that the birthdate is of the past
     private LocalDateTime birthDate;
 
     

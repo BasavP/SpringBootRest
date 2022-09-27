@@ -9,6 +9,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 @RestController
 public class UserResource {
 
@@ -29,8 +31,8 @@ public class UserResource {
         return service.findOne(id);
     }
 
-    @PostMapping(path="/users")
-    public ResponseEntity<Object> saveUser(@RequestBody User user)
+    @PostMapping(path="/users")  
+    public ResponseEntity<Object> saveUser( @Valid @RequestBody User user)  //@Valid to perform validation as specified in the user class 
     {
         User savedUser = service.save(user);
         //to return the URI after the user is saved
