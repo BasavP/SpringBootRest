@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.in28minutes.rest.webservices'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 repositories {
 	mavenCentral()
@@ -23,6 +23,9 @@ dependencies {
 implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.4'
 	/*implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.4'*/
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-hateoas
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-hateoas', version: '2.7.4'
+
 
 }
 
