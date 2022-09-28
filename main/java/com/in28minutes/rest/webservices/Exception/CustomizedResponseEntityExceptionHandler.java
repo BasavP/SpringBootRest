@@ -37,7 +37,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		return new ResponseEntity(error,HttpStatus.BAD_REQUEST);
 
 	}
-	
+	//some comment
 	public CustomizedResponseEntityExceptionHandler() {
 		// TODO Auto-generated constructor stub
 	}
