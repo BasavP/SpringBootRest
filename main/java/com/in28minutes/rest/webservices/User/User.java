@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.User;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -15,7 +16,7 @@ import javax.validation.constraints.Size;
 public class User {
 
     private Integer id;
-    
+    @JsonProperty("userName")
     @Size(min = 2, message = "name must be atleast 2 chars")
     private String name;
     
