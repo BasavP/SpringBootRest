@@ -2,20 +2,27 @@ package com.in28minutes.rest.webservices.helloWorld;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Locale;
 
 
 //Step 02 - Creating a Hello World REST API with Spring Boot
 @RestController
 public class HelloWorld {
-	/*
-	 * private static final Logger log =
-	 * LoggerFactory.getLogger(HelloWorld.class.getSimpleName());
-	 */
+
+	MessageSource messageSource;
+
+	HelloWorld(MessageSource messageSource){
+
+		this.messageSource=messageSource;
+	}
 	 
 	@GetMapping("/hello-world")
 	public String helloWorld() {
-		/* log.info("Called helloWorld()"); */
+
 		return "hello world";
 		
 	}	
@@ -24,7 +31,7 @@ public class HelloWorld {
 	//Step 03 - Enhancing the Hello World REST API to return a Bean
 	@GetMapping("/hello-world-bean")
 	public HelloWorldBean helloWorldBean() {
-		/* log.info("Called helloWorld()"); */
+
 		return new HelloWorldBean("Hello world Beans");
 	}
 
@@ -35,4 +42,16 @@ public class HelloWorld {
 		/* log.info("Called helloWorld()"); */
 		return new HelloWorldBean("Hello world "+ names);
 	}
+
+
+	@GetMapping("/hello-world-internationalized")
+	public String helloWorldInternationalized() {
+
+		Locale locale = LocaleContextHolder.getLocale();
+		return messageSource.getMessage("good.morning.message" , null ,
+				"DefaultMessage",locale);
+	}
+
+
+
 }
