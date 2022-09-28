@@ -4,8 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 //- Step 03 - Enhancing the Hello World REST API to return a Bean
 public class HelloWorldBean {
-	
 
+
+	@JsonProperty("Messages")
 	private String messages;
 
 	public HelloWorldBean(String messages) {
