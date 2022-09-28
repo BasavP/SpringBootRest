@@ -1,6 +1,9 @@
 package com.in28minutes.rest.webservices.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +29,25 @@ public class UserResource {
         return service.findAll();
     }
 
+
+    //
     @GetMapping(path = "/users/{id}")
-    public User retriveUser(@PathVariable ("id") Integer id){
-        return service.findOne(id);
+    public EntityModel<User> retriveUser(@PathVariable ("id") Integer id) throws Exception {
+        User user = service.findOne(id);
+
+        if (user == null ){
+            throw new Exception();
+        }
+
+
+        //HATEOAS
+        EntityModel<User> entityModel = EntityModel.of(user);
+        WebMvcLinkBuilder link = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).retriveAllUsers()) ;
+        entityModel.add(link.withRel("all-users"));
+
+        return entityModel;
+
+
     }
 
     @PostMapping(path="/users")  
