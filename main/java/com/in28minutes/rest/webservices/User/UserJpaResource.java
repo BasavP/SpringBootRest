@@ -1,36 +1,39 @@
 package com.in28minutes.rest.webservices.User;
 
+import com.in28minutes.rest.webservices.jpa.UserRepository;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
-
-import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
-public class UserResource {
+public class UserJpaResource {
 
     private UserDaoService service;
+    private UserRepository repository;
 
-    
-    public UserResource(UserDaoService service) {
+
+    public UserJpaResource(UserDaoService service,UserRepository repository) {
         this.service = service;
+        this.repository =repository;
     }
 
-    @GetMapping(path = "/users")
+    @GetMapping(path = "/jpa/users")
     public List<User> retriveAllUsers(){
-        return service.findAll();
+        return repository.findAll();
     }
 
 
     //
-    @GetMapping(path = "/users/{id}")
-    public EntityModel<User> retriveUser(@PathVariable ("id") Integer id) throws Exception {
-        User user = service.findOne(id);
+    @GetMapping(path = "/jpa/users/{id}")
+    public EntityModel<Optional<User>> retriveUser(@PathVariable ("id") Integer id) throws Exception {
+        Optional<User> user = repository.findById(id);
 
         if (user == null ){
             throw new Exception();
@@ -38,7 +41,7 @@ public class UserResource {
 
 
         //HATEOAS
-        EntityModel<User> entityModel = EntityModel.of(user);
+        EntityModel<Optional<User>> entityModel = EntityModel.of(user);
         WebMvcLinkBuilder link = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).retriveAllUsers()) ;
         entityModel.add(link.withRel("all-users"));
 
@@ -47,10 +50,10 @@ public class UserResource {
 
     }
 
-    @PostMapping(path="/users")  
+    @PostMapping(path="/jpa/users")
     public ResponseEntity<Object> saveUser( @Valid @RequestBody User user)  //@Valid to perform validation as specified in the user class 
     {
-        User savedUser = service.save(user);
+        User savedUser = repository.save(user);
         //to return the URI after the user is saved
          URI location  = ServletUriComponentsBuilder.fromCurrentRequest()
                  .path("/{id}")
@@ -61,10 +64,10 @@ public class UserResource {
     }
     
     
-    @DeleteMapping(path="/users/{id}")
+    @DeleteMapping(path="/jpa/users/{id}")
     public void deleteById(@PathVariable("id") int id)
     {
-    	service.deleteById(id);
+    	repository.deleteById(id);
     	
     	
     }

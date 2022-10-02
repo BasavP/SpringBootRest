@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 @Component
-public class UserDaoClass {
+public class UserDaoService {
 
     //will use ArrayList initially
 
