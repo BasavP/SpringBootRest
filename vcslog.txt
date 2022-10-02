@@ -1,0 +1,301 @@
+*   commit b2a9256d7393c6c2d19af2612737f84fde0d32e1
+|\  Merge: eff487e ca82012
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sun Oct 2 16:12:50 2022 +0530
+| | 
+| |     Merge pull request #14 from BasavP/Step29
+| |     
+| |     Enhance the RestAPI to communicate with JPA
+| | 
+| * commit ca820125890defc88521362d5c604749c11ad071
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sun Oct 2 16:11:06 2022 +0530
+|   
+|       Enhance the RestAPI to communicate with JPA
+|   
+*   commit eff487eb8fd18ae0ef6648843c28d29fc6842cca
+|\  Merge: ffb8ad5 ff01fdf
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sun Oct 2 15:36:15 2022 +0530
+| | 
+| |     Merge pull request #13 from BasavP/Step28
+| |     
+| |     Creating User Entity and some data
+| | 
+| * commit ff01fdf459f999cea3bab30209c64be8e8af1d03
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sun Oct 2 15:34:49 2022 +0530
+|   
+|       Creating User Entity and some data
+| 
+* commit ffb8ad5bf3addd953731e04d5472367557164a6a
+| Author: BasavP <basav@outlook.in>
+| Date:   Wed Sep 28 23:00:59 2022 +0530
+| 
+|     added dynamic filtering
+|   
+*   commit eafe3e6d4322ca0ede990c8ad4d75dee6794704e
+|\  Merge: df035af 772b1b5
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Wed Sep 28 21:07:25 2022 +0530
+| | 
+| |     Merge pull request #12 from BasavP/Step23
+| |     
+| |     added static filterling
+| | 
+| * commit 772b1b595c047170301cc86408eb805e9b5a465c
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Wed Sep 28 21:06:16 2022 +0530
+|   
+|       added static filterling
+| 
+* commit df035af7a7849a6a1d877e2184db14df98bdca91
+| Author: BasavP <basav@outlook.in>
+| Date:   Wed Sep 28 20:41:15 2022 +0530
+| 
+|     Implemented HATEOAS in User Resource
+| 
+* commit 0f9a254d687cf9036528fd26faa1103eea9aa19e
+| Author: BasavP <basav@outlook.in>
+| Date:   Wed Sep 28 20:20:57 2022 +0530
+| 
+|     commit2
+|   
+*   commit 8dbf5155da6fd2874d797fbf9c0524cc816d2bb8
+|\  Merge: 041f30d 4952a0a
+| | Author: BasavP <basav@outlook.in>
+| | Date:   Wed Sep 28 20:17:34 2022 +0530
+| | 
+| |     Merge branch 'main' of https://github.com/BasavP/SpringBootRest into main
+| |   
+| *   commit 4952a0a3a4fb196b1093d82ada0d7cb51fd43b3d
+| |\  Merge: 20b8ba7 bc54d23
+| | | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | | Date:   Wed Sep 28 20:06:20 2022 +0530
+| | | 
+| | |     Merge pull request #11 from BasavP/WorkLaptop1
+| | |     
+| | |     HATEOS gradle
+| | | 
+| | * commit bc54d23013d3f9fabb1d72e69401794baa2b9a70
+| | | Author: BasavP <basav@outlook.in>
+| | | Date:   Wed Sep 28 20:06:10 2022 +0530
+| | | 
+| | |     HATEOS gradle
+| | | 
+| * | commit 20b8ba712e32a70b6b910fe0f23645eadf3aa8d6
+| |\| Merge: 2eb607d dde5b76
+| | | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | | Date:   Wed Sep 28 17:27:35 2022 +0530
+| | | 
+| | |     Merge pull request #10 from BasavP/WorkLaptop1
+| | |     
+| | |     Work laptop1
+| | | 
+| | * commit dde5b76ac3b7908a7778b3f597a7466c23d9b382
+| | | Author: BasavP <basav@outlook.in>
+| | | Date:   Wed Sep 28 17:26:33 2022 +0530
+| | | 
+| | |     Implemented Versioning using headers , request params
+| | | 
+| | * commit bfd0528f7451ebdead301bca8d59201801db8d2f
+| | | Author: BasavP <basav@outlook.in>
+| | | Date:   Wed Sep 28 17:06:46 2022 +0530
+| | | 
+| | |     Versioning using URI
+| | | 
+| | * commit 86e9eb16a42dfb4f92fe9409804f9239546bf1c5
+| |/  Author: BasavP <basav@outlook.in>
+| |   Date:   Wed Sep 28 15:47:13 2022 +0530
+| |   
+| |       Internationalization
+| | 
+* | commit 041f30d1526413652488232ada7529e13ad970de
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Wed Sep 28 20:17:30 2022 +0530
+|   
+|       commit
+| 
+* commit 2eb607d71ff18532b17ae2221f4ed6993ac732a6
+| Author: BasavP <basav@outlook.in>
+| Date:   Wed Sep 28 00:05:42 2022 +0530
+| 
+|     Added the build.gradle file
+|   
+*   commit 806e86bd11577f1b690d705bfcf7b9c1aacae36a
+|\  Merge: 25e178c 44f9338
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Tue Sep 27 23:41:19 2022 +0530
+| | 
+| |     Merge pull request #9 from BasavP/Step14
+| |     
+| |     Step14
+| | 
+| * commit 44f93389cbd3389346088dc37b7b915e551fd979
+| | Author: BasavP <basav@outlook.in>
+| | Date:   Tue Sep 27 23:39:19 2022 +0530
+| | 
+| |     Validation
+| | 
+| * commit 46b81cca505712cc9c8e5d806969e9fcd4e27a4a
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Tue Sep 27 23:12:53 2022 +0530
+|   
+|       delete method implemented
+|   
+*   commit 25e178c47053637e49ca5786d90289f4fc2f8f75
+|\  Merge: 353f7a5 a4f49c1
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sun Sep 25 21:45:58 2022 +0530
+| | 
+| |     Merge pull request #8 from BasavP/Step12
+| |     
+| |     ExceptionHandling101
+| | 
+| * commit a4f49c1cff5e0ad7e3a15b1097b946df09327f40
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sun Sep 25 21:44:08 2022 +0530
+|   
+|       ExceptionHandling101
+|   
+*   commit 353f7a546fd0a37c9762802f36451887c359a5ba
+|\  Merge: e47b802 3eeddc2
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sun Sep 25 19:56:44 2022 +0530
+| | 
+| |     Merge pull request #7 from BasavP/Step10
+| |     
+| |     response code set to 201 and returns the URI after the post
+| | 
+| * commit 3eeddc2513efa5f30d4ba408a6efb6aa68d99881
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sun Sep 25 19:54:57 2022 +0530
+|   
+|       response code set to 201 and returns the URI after the post
+| 
+* commit e47b802a1654f4e0be3f516a137cbdf8c0780db8
+| Author: BasavP <basav@outlook.in>
+| Date:   Sun Sep 25 17:18:28 2022 +0530
+| 
+|     POST method handled
+|   
+*   commit 3fa5bf178b4dae343466d3dcc0888cd68fb791a1
+|\  Merge: e8b51cd afa6d70
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sun Sep 25 15:41:25 2022 +0530
+| | 
+| |     Merge pull request #6 from BasavP/Step07
+| |     
+| |     User UserDAO
+| | 
+| * commit afa6d709e0806e727cc7a1c7d3ca77853c78316d
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sun Sep 25 15:40:31 2022 +0530
+|   
+|       User UserDAO
+|   
+*   commit e8b51cd714fec73d4d96c0d3af947995650dfbab
+|\  Merge: 5d2f5c9 89a2904
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sun Sep 25 15:11:13 2022 +0530
+| | 
+| |     Merge pull request #5 from BasavP/Step05
+| |     
+| |     added path variable
+| | 
+| * commit 89a29041101ba001ac914900643bdaf51a7dfedd
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sun Sep 25 15:09:30 2022 +0530
+|   
+|       added path variable
+| 
+* commit 5d2f5c9b5b83503bcbac5f08433e9dc9cb2d51a7
+| Author: BasavP <basav@outlook.in>
+| Date:   Sat Sep 24 20:00:39 2022 +0530
+| 
+|     appProperties
+|   
+*   commit d56e39b54e873501f2fcbe5bd4870e86e49b5b05
+|\  Merge: 661e306 80d9dea
+| | Author: BasavP <basav@outlook.in>
+| | Date:   Sat Sep 24 19:54:28 2022 +0530
+| | 
+| |     ,,
+| |   
+| *   commit 80d9dea6b455674dffc1849344cfcde65796e605
+| |\  Merge: b46f3f8 8d5ad97
+| | | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | | Date:   Sat Sep 24 19:50:12 2022 +0530
+| | | 
+| | |     Merge pull request #4 from BasavP/minor
+| | |     
+| | |     Minor
+| | | 
+| | * commit 8d5ad97e5df3797312f42c84d7e3982836d407c0
+| | | Author: BasavP <basav@outlook.in>
+| | | Date:   Sat Sep 24 19:47:06 2022 +0530
+| | | 
+| | |     changed application.properties to enable debug logs
+| | | 
+| | * commit c7f6b72175d9cec6ee3cf36e0800f62e752f881d
+| |/  Author: BasavP <basav@outlook.in>
+| |   Date:   Sat Sep 24 19:44:41 2022 +0530
+| |   
+| |       changed application.properties to enable debug logs
+| | 
+* | commit 661e3060f02606f46f130066e02d6b02f4dbef66
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sat Sep 24 19:44:41 2022 +0530
+|   
+|       changed application.properties to enable debug logs
+|   
+*   commit b46f3f859a94af32a0e1edfe6418eeb08e21d757
+|\  Merge: f4bafc9 bc7c356
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sat Sep 24 19:32:07 2022 +0530
+| | 
+| |     Merge pull request #3 from BasavP/Step03
+| |     
+| |     Step03
+| | 
+| * commit bc7c3560f702646e2e58055f34881e62e487b87f
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sat Sep 24 19:30:31 2022 +0530
+|   
+|       Step03
+|   
+*   commit f4bafc9ffe0a971d0cf312335b53325858fc0808
+|\  Merge: d91bfc2 14ff414
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sat Sep 24 18:46:19 2022 +0530
+| | 
+| |     Merge pull request #2 from BasavP/Step02
+| |     
+| |     First GetMapping
+| | 
+| * commit 14ff41467054984524b4e6aea4fe9c64490f5651
+| | Author: BasavP <basav@outlook.in>
+| | Date:   Sat Sep 24 18:43:57 2022 +0530
+| | 
+| |     First GetMapping
+| | 
+* | commit d91bfc200e46bcc6575c58d92f9a46766b21964c
+|\| Merge: e696863 4af7f23
+| | Author: BasavP <111698342+BasavP@users.noreply.github.com>
+| | Date:   Sat Sep 24 16:07:23 2022 +0530
+| | 
+| |     Merge pull request #1 from BasavP/ISO-0001
+| |     
+| |     ISO-0001
+| | 
+| * commit 4af7f2377e67958b4f9dcf8f4e9cf85c9e83f042
+|/  Author: BasavP <basav@outlook.in>
+|   Date:   Sat Sep 24 16:04:19 2022 +0530
+|   
+|       ISO-0001
+| 
+* commit e696863fb3955631aa28bb3a8dc5ec34df166d0b
+  Author: BasavP <basav@outlook.in>
+  Date:   Sat Sep 24 15:54:54 2022 +0530
+  
+      firstCommit
