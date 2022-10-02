@@ -21,6 +21,9 @@ dependencies {
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.4'
 	compileOnly 'org.projectlombok:lombok:1.18.24'
 implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.4'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.7.4'
+
 	/*implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.4'*/
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-hateoas
