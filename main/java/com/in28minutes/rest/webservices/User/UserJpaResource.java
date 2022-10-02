@@ -42,7 +42,8 @@ public class UserJpaResource {
 
         //HATEOAS
         EntityModel<Optional<User>> entityModel = EntityModel.of(user);
-        WebMvcLinkBuilder link = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).retriveAllUsers()) ;
+        WebMvcLinkBuilder link = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass())
+                .retriveAllUsers()) ;
         entityModel.add(link.withRel("all-users"));
 
         return entityModel;
@@ -70,6 +71,18 @@ public class UserJpaResource {
     	repository.deleteById(id);
     	
     	
+    }
+
+
+    @GetMapping("/jpa/users/{id}/posts")
+    public List<Post> retrievePostsForUser(@PathVariable int id) throws Exception {
+        Optional<User> user = repository.findById(id);
+
+        if(user.isEmpty())
+            throw new Exception("id:"+id);
+
+        return user.get().getPosts();
+
     }
 
 }

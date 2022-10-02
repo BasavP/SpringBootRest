@@ -31,6 +31,10 @@ public class User {
     @JsonIgnore
     private List<Post> posts;
 
+    public List<Post> getPosts() {
+        return posts;
+    }
+
     @Past  (message = "birthDate should be in the past" )  //to ensure that the birthdate is of the past
     private LocalDateTime birthDate;
 
