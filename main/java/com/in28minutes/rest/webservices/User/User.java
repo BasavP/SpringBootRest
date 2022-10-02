@@ -1,14 +1,17 @@
 package com.in28minutes.rest.webservices.User;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -23,7 +26,11 @@ public class User {
 //    @JsonProperty("userName")
     @Size(min = 2, message = "name must be atleast 2 chars")
     private String name;
-    
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Post> posts;
+
     @Past  (message = "birthDate should be in the past" )  //to ensure that the birthdate is of the past
     private LocalDateTime birthDate;
 
