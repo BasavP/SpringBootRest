@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.User;
 
+import com.in28minutes.rest.webservices.jpa.PostRepository;
 import com.in28minutes.rest.webservices.jpa.UserRepository;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
@@ -17,11 +18,12 @@ public class UserJpaResource {
 
     private UserDaoService service;
     private UserRepository repository;
+    private PostRepository postRepository;
 
 
-    public UserJpaResource(UserDaoService service,UserRepository repository) {
-        this.service = service;
+    public UserJpaResource(UserRepository repository  , PostRepository postRepository) {
         this.repository =repository;
+        this.postRepository = postRepository;
     }
 
     @GetMapping(path = "/jpa/users")
@@ -63,6 +65,27 @@ public class UserJpaResource {
 
         return ResponseEntity.created(location).build(); // returns 201
     }
+
+
+    @PostMapping(path="/jpa/users/{id}/posts")
+    public ResponseEntity<Object> savePost( @PathVariable ("id") int id,@Valid @RequestBody Post post) throws Exception  //@Valid to perform validation as specified in the user class
+    {
+            Optional<User> user = repository.findById(id);
+
+            if(user.isEmpty()){ throw new Exception();}
+
+            post.setUser(user.get());
+
+        Post savedPost = postRepository.save(post);
+
+        URI location  = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(savedPost.getId())
+                .toUri();
+
+        return ResponseEntity.created(location).build();
+
+    }
     
     
     @DeleteMapping(path="/jpa/users/{id}")
@@ -75,7 +98,7 @@ public class UserJpaResource {
 
 
     @GetMapping("/jpa/users/{id}/posts")
-    public List<Post> retrievePostsForUser(@PathVariable int id) throws Exception {
+    public List<Post> retrievePostsForUser(@PathVariable ("id") int id) throws Exception {
         Optional<User> user = repository.findById(id);
 
         if(user.isEmpty())
