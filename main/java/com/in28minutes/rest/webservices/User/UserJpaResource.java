@@ -2,6 +2,8 @@ package com.in28minutes.rest.webservices.User;
 
 import com.in28minutes.rest.webservices.jpa.PostRepository;
 import com.in28minutes.rest.webservices.jpa.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
@@ -16,18 +18,25 @@ import java.util.Optional;
 @RestController
 public class UserJpaResource {
 
+
+    Logger log = LoggerFactory.getLogger(UserJpaResource.class.getName());
+
     private UserDaoService service;
     private UserRepository usesrRepository;
     private PostRepository postRepository;
 
 
     public UserJpaResource(UserRepository usesrRepository, PostRepository postRepository) {
+        log.debug("Inside the Construtor");
         this.usesrRepository = usesrRepository;
         this.postRepository = postRepository;
     }
 
     @GetMapping(path = "/jpa/users")
     public List<User> retriveAllUsers(){
+
+        log.info("Inside the method retriveAllUsers ");
+
         return usesrRepository.findAll();
     }
 
@@ -35,6 +44,9 @@ public class UserJpaResource {
     //
     @GetMapping(path = "/jpa/users/{id}")
     public EntityModel<Optional<User>> retriveUser(@PathVariable ("id") Integer id) throws Exception {
+        log.info("Inside the method retriveUser ");
+        log.debug("id : " + id );
+
         Optional<User> user = usesrRepository.findById(id);
 
         if (user == null ){
@@ -56,6 +68,9 @@ public class UserJpaResource {
     @PostMapping(path="/jpa/users")
     public ResponseEntity<Object> saveUser( @Valid @RequestBody User user)  //@Valid to perform validation as specified in the user class 
     {
+        log.info("Inside the method saveUser ");
+
+        log.debug("Request Body : " + user.toString());
         User savedUser = usesrRepository.save(user);
         //to return the URI after the user is saved
          URI location  = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -70,6 +85,10 @@ public class UserJpaResource {
     @PostMapping(path="/jpa/users/{id}/posts")
     public ResponseEntity<Object> savePost( @PathVariable ("id") int id,@Valid @RequestBody Post post) throws Exception  //@Valid to perform validation as specified in the user class
     {
+            log.info("Inside the method savePost");
+            log.debug("Posting for the id :" + id);
+            log.debug("Post : " + post.toString());
+
             Optional<User> user = usesrRepository.findById(id);
 
             if(user.isEmpty()){ throw new Exception();}
@@ -91,6 +110,9 @@ public class UserJpaResource {
     @DeleteMapping(path="/jpa/users/{id}")
     public void deleteById(@PathVariable("id") int id)
     {
+
+        log.info("Inside the method deleteById ");
+        log.debug("Deleting the id : "+id);
     	usesrRepository.deleteById(id);
     	
     	
@@ -99,6 +121,11 @@ public class UserJpaResource {
 
     @GetMapping("/jpa/users/{id}/posts")
     public List<Post> retrievePostsForUser(@PathVariable ("id") int id) throws Exception {
+
+        log.info("Inside the method retrievePostsForUser ");
+
+        log.debug("retrieving posts for the user id : "+id);
+
         Optional<User> user = usesrRepository.findById(id);
 
         if(user.isEmpty())
