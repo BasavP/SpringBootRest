@@ -17,25 +17,25 @@ import java.util.Optional;
 public class UserJpaResource {
 
     private UserDaoService service;
-    private UserRepository repository;
+    private UserRepository usesrRepository;
     private PostRepository postRepository;
 
 
-    public UserJpaResource(UserRepository repository  , PostRepository postRepository) {
-        this.repository =repository;
+    public UserJpaResource(UserRepository usesrRepository, PostRepository postRepository) {
+        this.usesrRepository = usesrRepository;
         this.postRepository = postRepository;
     }
 
     @GetMapping(path = "/jpa/users")
     public List<User> retriveAllUsers(){
-        return repository.findAll();
+        return usesrRepository.findAll();
     }
 
 
     //
     @GetMapping(path = "/jpa/users/{id}")
     public EntityModel<Optional<User>> retriveUser(@PathVariable ("id") Integer id) throws Exception {
-        Optional<User> user = repository.findById(id);
+        Optional<User> user = usesrRepository.findById(id);
 
         if (user == null ){
             throw new Exception();
@@ -56,7 +56,7 @@ public class UserJpaResource {
     @PostMapping(path="/jpa/users")
     public ResponseEntity<Object> saveUser( @Valid @RequestBody User user)  //@Valid to perform validation as specified in the user class 
     {
-        User savedUser = repository.save(user);
+        User savedUser = usesrRepository.save(user);
         //to return the URI after the user is saved
          URI location  = ServletUriComponentsBuilder.fromCurrentRequest()
                  .path("/{id}")
@@ -70,7 +70,7 @@ public class UserJpaResource {
     @PostMapping(path="/jpa/users/{id}/posts")
     public ResponseEntity<Object> savePost( @PathVariable ("id") int id,@Valid @RequestBody Post post) throws Exception  //@Valid to perform validation as specified in the user class
     {
-            Optional<User> user = repository.findById(id);
+            Optional<User> user = usesrRepository.findById(id);
 
             if(user.isEmpty()){ throw new Exception();}
 
@@ -91,7 +91,7 @@ public class UserJpaResource {
     @DeleteMapping(path="/jpa/users/{id}")
     public void deleteById(@PathVariable("id") int id)
     {
-    	repository.deleteById(id);
+    	usesrRepository.deleteById(id);
     	
     	
     }
@@ -99,7 +99,7 @@ public class UserJpaResource {
 
     @GetMapping("/jpa/users/{id}/posts")
     public List<Post> retrievePostsForUser(@PathVariable ("id") int id) throws Exception {
-        Optional<User> user = repository.findById(id);
+        Optional<User> user = usesrRepository.findById(id);
 
         if(user.isEmpty())
             throw new Exception("id:"+id);
